@@ -114,7 +114,7 @@ echo $env
 micromamba env create -y -f $env
 echo ""
 done
-micromamba clean -a
+micromamba clean -y -a
 ```
 
 ### ARM
@@ -127,18 +127,35 @@ echo $env
 micromamba env create -y -f $env
 echo ""
 done
-micromamba clean -a
+micromamba clean -y -a
 
 mkdir applications
 cd applications
-git clone https://github.com/tseemann/snippy
-echo "export PATH=/home/pathogen/applications/snippy/bin:\$PATH" >> ~/.bashrc
+
+## Install snippy 
+#### Due to problems with the conda package of perl-bioperl, snippy will not work on ARM machines 
+#git clone https://github.com/tseemann/snippy
+#echo "export PATH=/home/pathogen/applications/snippy/bin:\$PATH" >> ~/.bashrc
+
+## Install ChroQueTas
 git clone https://github.com/nmquijada/ChroQueTas.git
 chmod 700 ChroQueTas/bin/ChroQueTas.sh 
 cd ChroQueTas/FungAMR_db/
 tar -zxvf db-v20250811.tgz
-rm db-v20250811.tgz
+mv db-v0.6.0/* .
+rm -r db-v20250811.tgz db-v0.6.0
 echo "export PATH=/home/pathogen/applications/ChroQueTas/bin:\$PATH" >> ~/.bashrc
+
+## Install Quast
+cd ~/applications
+git clone https://github.com/ablab/quast
+cd quast
+micromamba activate assembly_env
+./setup.py install
+micromamba deactivate
+ln -s quast.py quast
+echo "export PATH=/home/pathogen/applications/quast:\$PATH" >> ~/.bashrc
+
 cd ~
 source ~/.bashrc
 ```

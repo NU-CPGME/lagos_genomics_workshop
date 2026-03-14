@@ -26,3 +26,6 @@ dependencies:
   - blast
   - mafft
   - miniprot
+  - seqkit
+  - emboss
+  - blast
