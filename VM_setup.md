@@ -107,7 +107,7 @@ micromamba config set channel_priority strict
 ### Intel / AMD
 
 ```Shell
-git clone https://github.com/NU-CPGME/lagos_genomics_workshop
+git clone --depth 1 https://github.com/NU-CPGME/lagos_genomics_workshop
 for env in lagos_genomics_workshop/conda_envs/*.yaml
 do
 echo $env
