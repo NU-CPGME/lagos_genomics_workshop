@@ -18,11 +18,14 @@
 * Username: pathogen
 * Password: workshop
 
-```Shell
-sudo apt-install lubuntu desktop
-```
+> [!IMPORTANT]
+> Unselect the "LVM" option when creating storage
 
-* Reboot
+```Shell
+sudo apt install lxqt cmake
+sudo apt clean
+reboot
+```
 
 ## 2: VirtualBox copy/paste setup
 
@@ -45,7 +48,7 @@ sudo apt-install lubuntu desktop
 ## 3. Install software
 
 ```Shell
-sudo apt install figtree
+sudo apt install seaview
 ```
 
 ## 4. Install R
@@ -101,6 +104,8 @@ micromamba config set channel_priority strict
 
 ## 8. Create conda environments
 
+### Intel / AMD
+
 ```Shell
 git clone https://github.com/NU-CPGME/lagos_genomics_workshop
 for env in lagos_genomics_workshop/conda_envs/*.yaml
@@ -109,6 +114,26 @@ echo $env
 micromamba env create -y -f $env
 echo ""
 done
+```
+
+### ARM
+
+```Shell
+git clone https://github.com/NU-CPGME/lagos_genomics_workshop
+for env in lagos_genomics_workshop/conda_envs/ARM/*.yaml
+do
+echo $env
+micromamba env create -y -f $env
+echo ""
+done
+
+mkdir applications
+cd applications
+git clone https://github.com/tseemann/snippy
+echo "export PATH= "
+git clone https://github.com/nmquijada/ChroQueTas.git
+chmod 700 ChroQueTas/bin/ChroQueTas.sh 
+
 ```
 
 ## 9. Clean up
