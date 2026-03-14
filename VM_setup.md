@@ -120,7 +120,7 @@ micromamba clean -a
 ### ARM
 
 ```Shell
-git clone https://github.com/NU-CPGME/lagos_genomics_workshop
+git clone --depth 1 https://github.com/NU-CPGME/lagos_genomics_workshop
 for env in lagos_genomics_workshop/conda_envs/ARM/*.yaml
 do
 echo $env
