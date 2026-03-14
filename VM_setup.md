@@ -2,25 +2,27 @@
 
 ## 1A. Intel/AMD VM
 
-ISO: lubuntu-24.04.4-desktop-amd64.iso
-Memory: 4096
-Processors: 4
-Storage: 50 GB
-Username: pathogen
-Password: workshop
+* ISO: lubuntu-24.04.4-desktop-amd64.iso
+* Memory: 4096
+* Processors: 4
+* Storage: 50 GB
+* Username: pathogen
+* Password: workshop
 
 ## 1B: ARM
 
-ISO: ubuntu-24.04.4-live-server-arm64.iso
-Memory: 4096
-Processors: 4
-Storage: 50 GB
-Username: pathogen
-Password: workshop
+* ISO: ubuntu-24.04.4-live-server-arm64.iso
+* Memory: 4096
+* Processors: 4
+* Storage: 50 GB
+* Username: pathogen
+* Password: workshop
 
 ```Shell
 sudo apt-install lubuntu desktop
 ```
+
+* Reboot
 
 ## 2: VirtualBox copy/paste setup
 
