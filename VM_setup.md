@@ -114,6 +114,7 @@ echo $env
 micromamba env create -y -f $env
 echo ""
 done
+micromamba clean -a
 ```
 
 ### ARM
@@ -126,6 +127,7 @@ echo $env
 micromamba env create -y -f $env
 echo ""
 done
+micromamba clean -a
 
 mkdir applications
 cd applications
