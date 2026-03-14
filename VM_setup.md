@@ -132,10 +132,15 @@ micromamba clean -a
 mkdir applications
 cd applications
 git clone https://github.com/tseemann/snippy
-echo "export PATH= "
+echo "export PATH=/home/pathogen/applications/snippy/bin:\$PATH" >> ~/.bashrc
 git clone https://github.com/nmquijada/ChroQueTas.git
 chmod 700 ChroQueTas/bin/ChroQueTas.sh 
-
+cd ChroQueTas/FungAMR_db/
+tar -zxvf db-v20250811.tgz
+rm db-v20250811.tgz
+echo "export PATH=/home/pathogen/applications/ChroQueTas/bin:\$PATH" >> ~/.bashrc
+cd ~
+source ~/.bashrc
 ```
 
 ## 9. Clean up
