@@ -147,11 +147,11 @@ source ~/.bashrc
 
 ```Shell
 mv lagos_genomics_workshop/data/* ~/
-cat lagos_genomics_workshop/data/nanopore_reads/split.gz.part-* > lagos_genomics_workshop/data/nanopore_reads/CA.fastq.gz
-rm lagos_genomics_workshop/data/nanopore_reads/split.gz.part-*
+cat nanopore_reads/split.gz.part-* > nanopore_reads/CA.fastq.gz
+rm nanopore_reads/split.gz.part-*
 if [ -e lagos_genomics_workshop/example_output ]
 then
 mv lagos_genomics_workshop/example_output ~/
 fi
-rm -r lagos_genomics_workshop
+rm -rf lagos_genomics_workshop
 ```
